@@ -36,7 +36,7 @@ public class RNPushNotificationPublisher extends BroadcastReceiver {
 
     private void notifyNotification(Context context, int id) {
         final Bundle bundle = new Bundle();
-        bundle.putInt(NOTIFICATION_ID, id);
+        bundle.putInt("id", id);
         Boolean isForeground = isApplicationInForeground(context);
         bundle.putBoolean("foreground", isForeground);
         bundle.putBoolean("userInteraction", false);
