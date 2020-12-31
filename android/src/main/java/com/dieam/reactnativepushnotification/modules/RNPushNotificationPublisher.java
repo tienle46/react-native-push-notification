@@ -30,8 +30,9 @@ public class RNPushNotificationPublisher extends BroadcastReceiver {
         if(isApplicationInForeground(context) == false) {
             new RNPushNotificationHelper(applicationContext)
                     .sendToNotificationCentre(intent.getExtras());
+        } else {
+            notifyNotification(context, id);
         }
-        notifyNotification(context, id);
     }
 
     private void notifyNotification(Context context, int id) {
